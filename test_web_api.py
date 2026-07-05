@@ -54,5 +54,5 @@ async def test_web_api(host: str):
             pass  # silent fail
 
 if __name__ == "__main__":
-    host = sys.argv[1] if len(sys.argv) > 1 else "10.64.67.230"
+    host = sys.argv[1] if len(sys.argv) > 1 else "<xx.xx.xx.xx>"
     asyncio.run(test_web_api(host))
