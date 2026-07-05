@@ -91,7 +91,7 @@ Once you have the `.tar.gz` file:
 1. Open remote's web UI: `http://<remote-ip>:8080`
 2. Settings → Integrations → Install custom
 3. Upload `uc-intg-sonyavr-za-aarch64.tar.gz`
-4. Complete setup (enter receiver IP: `10.64.67.230`)
+4. Complete setup (enter receiver IP: `<your receiver ip>`)
 
 Done!
 
