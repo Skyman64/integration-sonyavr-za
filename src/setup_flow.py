@@ -61,7 +61,7 @@ _user_input_discovery = RequestUserInput(
             "field": {
                 "label": {
                     "value": {
-                        "en": "Enter the receiver's IP address (e.g. 10.64.67.230). Auto-discovery is not supported.",
+                        "en": "Enter the receiver's IP address (e.g. <xx.xx.xx.xx>). Auto-discovery is not supported.",
                         "de": "Leer lassen, um automatische Erkennung zu verwenden. Ansonsten ist das erwartete format : http://<ip address>:10000/sony",
                         "fr": "Laissez le champ vide pour utiliser la découverte automatique. Sinon format attendu : http://<ip address>:10000/sony",
                     }
