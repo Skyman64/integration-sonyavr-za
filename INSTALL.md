@@ -16,16 +16,16 @@ zones) from your Remote 3. There are two ways to run the integration:
 
 1. Give the receiver a **fixed IP address**. Easiest: a DHCP reservation on
    your router for the receiver's MAC. This integration has no auto-discovery,
-   and the config stores the IP. (Current IP: `10.64.67.230`.)
+   and the config stores the IP. (Current IP: `<your receiver ip>)`.)
 2. Confirm **External Control is ON** (Network settings — already enabled on
    your unit).
 3. Set **Network Standby ON** so the receiver accepts power-on commands while
-   in standby. In the web UI (`http://10.64.67.230` → Network) or the front
+   in standby. In the web UI (`http://<your receiver ip>)` → Network) or the front
    panel network settings. If network standby is off, the control port goes
    dark when the receiver is fully off and only IR can wake it.
 4. Quick health check from any machine on the LAN:
 
-       nc -z 10.64.67.230 33335 && echo "control port open"
+       nc -z <your receiver ip>) 33335 && echo "control port open"
 
 ---
 
@@ -42,7 +42,7 @@ Requires Python 3.11 or newer (`python3 --version`).
 
 ### 2.2 Smoke test the receiver connection
 
-    python3 src/test.py 10.64.67.230
+    python3 src/test.py <your receiver ip>)
 
 You should see the three zones with power/volume/input and then live
 notifications when you touch the volume knob or switch inputs. Ctrl-C to exit.
@@ -67,7 +67,7 @@ Notes:
 2. The driver announces itself via mDNS; "Sony ES Receivers (ZA / AV7000ES)"
    should appear. If it doesn't, choose manual entry and point it at
    `ws://<driver-machine-ip>:9090`.
-3. Run the setup flow: enter the receiver IP `10.64.67.230` when asked,
+3. Run the setup flow: enter the receiver IP `<your receiver ip>)` when asked,
    pick the device, set volume step, finish.
 4. Add the entities to your profile: you'll see **three media players**
    (Main, Zone 2, Zone 3) plus the sensors and input/sound-mode selects.
@@ -135,7 +135,7 @@ The binary lands in `dist/driver`.
    recent firmware; enable "custom integrations" in developer options if not
    visible).
 2. Upload `uc-intg-sonyavr-za-aarch64.tar.gz`.
-3. Run the setup flow (enter `10.64.67.230`) and add the entities.
+3. Run the setup flow (enter <your receiver ip>) and add the entities.
 
 Note: custom integrations survive reboots but may need re-upload after some
 firmware updates.
@@ -154,8 +154,8 @@ firmware updates.
 
 ## 5. Troubleshooting
 
-- **Setup fails at IP entry** — check `http://10.64.67.230` loads in a
-  browser and `nc -z 10.64.67.230 33335` succeeds from the driver machine.
+- **Setup fails at IP entry** — check `http://<your receiver ip>)` loads in a
+  browser and `nc -z <your receiver ip>) 33335` succeeds from the driver machine.
 - **Everything unavailable after receiver power cycle** — the driver
   auto-reconnects with backoff (2 s → 30 s); wait ~30 s or restart the driver.
 - **AUX selects the wrong input** — run `python3 src/test.py`, select AUX on
