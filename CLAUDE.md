@@ -74,14 +74,14 @@ it was verified live against the actual receiver (fw 1.516, model type
 - FM frequency decode: 16-bit big-endian value / 100 = MHz (NOT the
   /99.5 approximation found in the peteS-UK/sonyavr HA code). AM = raw kHz.
 
-## Testing etiquette (receiver is live in Kenn's home)
+## Testing etiquette (receiver is live in user's home)
 
 - Prefer read-only queries. For write tests use **Zone 2** (line-out, off
   in normal use) and **always restore state**: it should end
   `power=off, input=0x02 (CD)`. If you touch the tuner, restore band AM
   (last known: AM 530 kHz, no preset).
 - Main zone is in daily use (input STB = code 0x3F). Don't switch main
-  input or toggle main power without asking Kenn.
+  input or toggle main power without asking user.
 - Reversible main-zone tests (volume ±1 step, pure direct on→off) are fine.
 
 ## Known-unverified items (flagged in code comments too)
