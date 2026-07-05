@@ -38,7 +38,7 @@ check_docker() {
 }
 
 check_receiver() {
-    local receiver_ip="${1:-10.64.67.230}"
+    local receiver_ip="${1:-<xx.xx.xx.xx>}"
     log_info "Checking receiver at $receiver_ip..."
 
     if ping -c 1 "$receiver_ip" &> /dev/null; then
