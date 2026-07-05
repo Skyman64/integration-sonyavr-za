@@ -81,7 +81,7 @@ You should have: `uc-intg-sonyavr-za-aarch64.tar.gz` (~50-100 MB)
 
 4. Setup:
    - Integration setup flow appears
-   - Enter receiver IP: `10.64.67.230`
+   - Enter receiver IP: `<xx.xx.xx.xx>`
    - Complete setup
 
 5. Done:
@@ -94,7 +94,7 @@ If you prefer direct upload:
 
 ```bash
 # Find remote IP
-remote_ip="192.168.x.x"  # Replace with your remote IP
+remote_ip="<xx.xx.xx.xx>"  # Replace with your remote IP
 
 # Upload archive
 scp uc-intg-sonyavr-za-aarch64.tar.gz uc-integrations@$remote_ip:/home/uc-integrations/
