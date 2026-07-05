@@ -120,7 +120,7 @@ cd "~/Documents/UCR3 Integrations/integration-sonyavr-za"
   import za_protocol, web_api, const, config, avr, media_player, selector, sensor, setup_flow, driver; \
   print('OK')"
 # live smoke test
-/tmp/zaenv/bin/python src/test.py 10.64.67.230
+/tmp/zaenv/bin/python src/test.py <xx.xx.xx.xx>
 # run the driver (remote connects via ws://<mac-ip>:9090)
 UC_CONFIG_HOME=./config /tmp/zaenv/bin/python src/driver.py
 ```
