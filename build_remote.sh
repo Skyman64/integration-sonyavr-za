@@ -131,7 +131,7 @@ Next steps:
 3. Upload the archive:
    ${GREEN}uc-intg-sonyavr-za-aarch64.tar.gz${NC}
 
-4. Complete the setup flow (enter receiver IP: 10.64.67.230)
+4. Complete the setup flow (enter receiver IP: 192.168.1.100)
 
 5. Done! Zone 2 sync commands available on remote
 
