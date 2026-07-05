@@ -10,7 +10,7 @@
     "en": "Control Sony ES receivers (STR-ZA series platform, STR-AV7000ES) incl. Zone 2/3 with Remote Two/3."
   },
   "developer": {
-    "name": "Kenn Walker (fork of albaintor/integration-sonyavr)"
+    "name": "skyman64 (fork of albaintor/integration-sonyavr)"
   },
   "home_page": "https://github.com/albaintor/integration-sonyavr",
   "setup_data_schema": {
