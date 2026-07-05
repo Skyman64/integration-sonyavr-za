@@ -14,7 +14,7 @@ _LOG = logging.getLogger(__name__)
 
 
 async def main():
-    host = sys.argv[1] if len(sys.argv) > 1 else "10.64.67.230"
+    host = sys.argv[1] if len(sys.argv) > 1 else "<xx.xx.xx.xx>"
     conn = SonyZaConnection(host)
 
     def on_zone_update(zone, state):
