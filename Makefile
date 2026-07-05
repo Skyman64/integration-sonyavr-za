@@ -62,4 +62,4 @@ dev-run:
 	python3 src/driver.py
 
 dev-test:
-	python3 src/test.py 10.64.67.230
+	python3 src/test.py 192.168.1.100
