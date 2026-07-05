@@ -1,8 +1,7 @@
 # CLAUDE.md — AI Assistant Handoff Notes
 
 Context document for AI models (Claude or otherwise) working on this codebase
-in future sessions. Read this before making changes. Human owner: Kenn Walker
-(kwalker@skyvine.com).
+in future sessions. Read this before making changes. Human owner: skyman64.
 
 ## What this project is
 
@@ -31,7 +30,7 @@ it was verified live against the actual receiver (fw 1.516, model type
 
 ## Environment facts
 
-- Receiver IP: **10.64.67.230** (web UI on port 80; needs a DHCP
+- Receiver IP: **XX.XX.XX.XX** (web UI on port 80; needs a DHCP
   reservation — the driver has no discovery).
 - The receiver answers on 33335 even in standby (network standby on).
 - Requires **Python 3.11+** (uses `enum.StrEnum`). ucapi ~= 0.6.0.
@@ -40,10 +39,7 @@ it was verified live against the actual receiver (fw 1.516, model type
 - A test venv may exist at `/tmp/zaenv` (aiohttp, pyee, ucapi installed);
   recreate with `python3 -m venv /tmp/zaenv && /tmp/zaenv/bin/pip install
   aiohttp pyee "ucapi~=0.6.0"`.
-- Gotcha (Cowork sessions): committing from the sandbox leaves stale
-  `.git/HEAD.lock` / tmp object files it can't delete. Fix by running
-  `rm -f .git/HEAD.lock .git/objects/*/tmp_obj_*` **on the Mac side**
-  (Desktop Commander / user shell), then commit from there.
+
 
 ## File map (src/)
 
@@ -91,17 +87,17 @@ it was verified live against the actual receiver (fw 1.516, model type
 ## Known-unverified items (flagged in code comments too)
 
 - `AUX` input code: `0x0A` chosen over `0x00` (both valid, one is AUX).
-  Verify: run test.py, have Kenn select AUX on the front panel, read the
+  Verify: run test.py, have user select AUX on the front panel, read the
   pushed status frame, fix `const.py` if needed.
 - HDMI output codes (`A0 45 <00-03>`): inherited from DN series, never
   tested (could switch main HDMI out — ask first).
 - Main-zone status byte bit5 (main shows `0x21` where zones show `0x01`):
   meaning unknown.
 
-## Worthwhile next steps (agreed with Kenn, not yet done)
+## Worthwhile next steps (agreed, not yet done)
 
 1. **Audio format detection**: decode `A4 82` (response `AC 82 87 FF 00 00
-   00`). Requires diffing while Kenn plays different formats
+   00`). Requires diffing while user plays different formats
    (Atmos vs PCM vs DTS). Would feed a "now playing format" sensor.
 2. **Device id from hardware**: `A5 A1` query returns MAC + 12-char ASCII
    serial + model + destination. Switch `config.extract_device_info` to use
