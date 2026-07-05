@@ -1,0 +1,43 @@
+{
+  "driver_id": "sonyavr_za_driver",
+  "version": "0.1.0",
+  "min_core_api": "0.20.0",
+  "name": {
+    "en": "Sony ES Receivers (ZA / AV7000ES)"
+  },
+  "icon": "custom:sony.png",
+  "description": {
+    "en": "Control Sony ES receivers (STR-ZA series platform, STR-AV7000ES) incl. Zone 2/3 with Remote Two/3."
+  },
+  "developer": {
+    "name": "Skyman64 (fork of albaintor/integration-sonyavr)"
+  },
+  "home_page": "https://github.com/Skyman64/integration-sonyavr-za",
+  "setup_data_schema": {
+    "title": {
+      "en": "Integration setup",
+      "de": "Integrationssetup",
+      "fr": "Configuration de l'intégration"
+    },
+    "settings": [
+      {
+        "id": "info",
+        "label": {
+          "en": "Setup process",
+          "de": "Setup Fortschritt",
+          "fr": "Progrès de la configuration"
+        },
+        "field": {
+          "label": {
+            "value": {
+              "en": "Enter your Sony AVR's IP address below. Auto-discovery is not supported by this receiver's control protocol.",
+              "de": "Geben Sie unten die IP-Adresse Ihres Sony AVR ein. Automatische Erkennung wird von diesem Steuerungsprotokoll nicht unterstützt.",
+              "fr": "Saisissez l'adresse IP de votre ampli Sony ci-dessous. La découverte automatique n'est pas prise en charge par ce protocole."
+            }
+          }
+        }
+      }
+    ]
+  },
+  "release_date": "2026-04-19"
+}

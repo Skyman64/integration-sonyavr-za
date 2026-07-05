@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  sony-avr-integration:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sony-avr-za-integration
+    restart: unless-stopped
+    ports:
+      - "8080:8080"  # Integration API port
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./config:/app/config  # Persistent configuration
+      - ./logs:/app/logs      # Logs directory
+    networks:
+      - integration-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/discover" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  integration-network:
+    driver: bridge
