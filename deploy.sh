@@ -110,7 +110,7 @@ show_status() {
     echo ""
     log_info "Next steps:"
     echo "  1. Add integration to your Unfolded Circle Remote"
-    echo "  2. Configure receiver IP: 10.64.67.230"
+    echo "  2. Configure receiver IP: 192.168.1.100"
     echo "  3. View logs: ./deploy.sh logs"
 }
 
@@ -130,7 +130,7 @@ Commands:
   test        Test connection to receiver
 
 Options:
-  --receiver-ip IP    Receiver IP address (default: 10.64.67.230)
+  --receiver-ip IP    Receiver IP address (default: 192.168.1.100)
   --help              Show this help message
 
 Examples:
@@ -175,7 +175,7 @@ main() {
             log_info "✓ Cleaned up"
             ;;
         test)
-            local receiver_ip="${2:-10.64.67.230}"
+            local receiver_ip="${2:-192.168.1.100}"
             check_receiver "$receiver_ip"
             ;;
         --help|-h|help)
