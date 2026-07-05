@@ -6,7 +6,7 @@ Run the Sony AVR ZA integration in a Docker container for easy deployment to you
 
 - Docker installed on your system
 - Docker Compose (optional, for easier management)
-- Sony AVR receiver on your network (192.168.1.99 or configured IP)
+- Sony AVR receiver on your network (<your receiver ip> or configured IP)
 
 ## Quick Start
 
@@ -99,7 +99,7 @@ Once the Docker container is running:
    - Go to **Settings > Integrations**
    - Select **Add Integration**
    - Choose **Sony AVR ZA**
-   - Enter your receiver IP: `192.168.1.99` (or your actual IP)
+   - Enter your receiver IP: `<your receiver ip>` (or your actual IP)
 
 2. The integration will discover:
    - Main zone media player
@@ -128,7 +128,7 @@ python3 src/driver.py
 make dev-test  # Connects to receiver and dumps zone state
 
 # Or manually
-python3 src/test.py 192.168.1.99
+python3 src/test.py <your receiver ip>)
 ```
 
 ### Run Tests
@@ -149,10 +149,10 @@ make test     # Run pytest
 docker logs sony-avr-za-integration
 
 # Verify receiver is reachable
-ping 192.168.1.99
+ping <your receiver ip>)
 
 # Test web API
-curl http://192.168.1.99/request.cgi
+curl http://<your receiver ip>)/request.cgi
 ```
 
 ### Integration not appearing on remote
@@ -317,6 +317,6 @@ networks:
 For issues or questions:
 
 1. Check logs: `make logs | grep -i error`
-2. Test connection: `python3 discover_eq_features.py 10.64.67.230`
+2. Test connection: `python3 discover_eq_features.py <your receiver ip>)`
 3. Review INSTALL.md and README.md for additional context
 
